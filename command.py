@@ -43,6 +43,9 @@ cmd_completer = pmtcomp.NestedCompleter.from_nested_dict({
   "watch":    None,
   "watch-all":None,
   "next":     None,
+  "prev":     None,
+  "backward": None,
+  "forward":  None,
   "help":     None,
   "append":   set(player.get_all_musiclist_name()),
 })
@@ -68,6 +71,9 @@ commands = {
   "^watch-all$|^wa$": player.log_all_playlist,
   "^watch$|^w$":      player.log_part_playlist,
   "^next$|^n$":       player.play_next_music,
+  "^prev$|^p$":       player.play_prev_music,
   "^help$|^h$":       show_help_message,
   "^append +|^app +": player.append_playlist,
+  "^backward":        player.backward_play,
+  "^forward":         player.forward_play
 }

@@ -19,6 +19,7 @@ while True:
     break
   else:
     try:
-      command.parse_command_and_execute(inst)
+      if len(inst) > 0:
+        command.parse_command_and_execute(inst)
     except Exception as err:
       print(err)
