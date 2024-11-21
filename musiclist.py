@@ -3,6 +3,9 @@
 import os
 import functools as fc
 
+def get_dir_name(dir):
+  return os.path.basename(dir) if not dir.endswith("/") else get_dir_name(dir[:len(dir) - 1])
+
 class MusicList:
   """
   Tree-like structure for the music-list, a music-list can contain a sub-music-list and raw music files
@@ -24,9 +27,9 @@ class MusicList:
       ml.append(f_d if os.path.isfile(f_d) else self._parse_music_list(f_d))
 
     ml.sort(key=lambda x: isinstance(x, dict))
-    self.music_list_names.append(os.path.basename(path))
+    self.music_list_names.append(get_dir_name(path))
 
-    return {"name": os.path.basename(path), "list": list(filter(is_playable, ml))}
+    return {"name": get_dir_name(path), "list": list(filter(is_playable, ml))}
 
   def get_all_lists(self):
     """

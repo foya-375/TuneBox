@@ -1,6 +1,13 @@
 # TuneBox
 A simple, easy-to-use filesystem-based music player written in python.
 
+Currently supported features:
+- playlist switching
+- playlist appending
+- log part or all of the playlist you are playing
+- play the previous/next song
+- forward/backward 10 seconds
+
 ## Installation
 ### Requirements
 First you need a Python3 interpreter and ffplay, the version of interpreter that I am using is 3.12.6.
@@ -10,12 +17,11 @@ Then use `pip install -r requirements.txt` to install additional requirements.
 After installation, type `python3 main.py` to launch this player.
 
 ## Configure
-Well... This programme is currently under development and not configurable, but you can modify the source code.
-1. In `player.py:Player`, you can modify the root music directory, but note that there can't be "/"" at the back of the directory.
-2. In `player.py:_play()`, you can change the player backend you prefer like mpv, mplayer, etc.Except that you have to rewrite some of the code of it.
+Currently a simple configuration file is provided as "~/.tuneboxrc.ini", you can modify the root music directory there. If the configuration file has not created yet,
+it would prompt for the directory you want to play at startup of this program.
 
 ## Usage
-This player is command based, instructions are executed every time you enter a command, If you want to check all the currently supported commands, just launch it and type "help".
+This player is command based, instructions are executed every time you enter a command, If you want to check all the supported commands, just launch it and type "help".
 
 This player is actually very simple. First, let's say you have specified a music root directory which looks like this:
 ```

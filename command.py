@@ -30,9 +30,12 @@ Commands:
   use ${musiclist-dir}: Switch to target playlist.
   loop:                 Loop a playlist that has already been selected
   next      | n:        Play the next song.
+  prev      | p:        Play the previous song.
   watch     | w:        Watch part of the current playlist.
   watchall  | wa:       Watch all of the current playlist.
   append    | app:      Append a playlist to current playlist
+  forward:              Forward 10 seconds.
+  backward:             Backward 10 seconds.
 """
 
 player = pl.Player()

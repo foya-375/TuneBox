@@ -6,7 +6,6 @@ import sys
 import re
 import command
 
-
 session = pmt.PromptSession(completer=command.cmd_completer)
 
 while True:
@@ -16,6 +15,7 @@ while True:
   except KeyboardInterrupt:
     continue
   except EOFError:
+    command.player.terminate_for_exit()
     break
   else:
     try:

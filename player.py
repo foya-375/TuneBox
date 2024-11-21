@@ -9,9 +9,10 @@ import prompt_toolkit as pmt
 
 import musiclist as ml
 from colorful import LogColor, log, log_listing
+from configure import root_music_path
 
 class Player:
-  __musics = ml.MusicList("/home/foya/music")
+  __musics = ml.MusicList(root_music_path)
 
   def __init__(self):
     self.playing_index = 0
@@ -198,3 +199,8 @@ class Player:
 
   def log_part_playlist(self):
     self._log_playlist(False)
+
+  @stop_playing_before_call
+  def terminate_for_exit(self):
+    # Simply stop the playing thread for exiting the program
+    pass
