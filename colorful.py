@@ -4,6 +4,26 @@ from enum import Enum
 from prompt_toolkit import print_formatted_text, HTML
 from prompt_toolkit.styles import Style
 
+ascii_art = r"""
+                                                 *******
+                                 ~             *---*******
+                                ~             *-----*******
+                         ~                   *-------*******
+                        __      _   _!__     *-------*******
+                   _   /  \_  _/ \  |::| ___ **-----********   ~
+                 _/ \_/^    \/   ^\/|::|\|:|  **---*****/^\_
+              /\/  ^ /  ^    / ^ ___|::|_|:|_/\_******/  ^  \
+             /  \  _/ ^ ^   /    |::|--|:|---|  \__/  ^     ^\___
+           _/_^  \/  ^    _/ ^   |::|::|:|-::| ^ /_  ^    ^  ^   \_
+          /   \^ /    /\ /       |::|--|:|:--|  /  \        ^      \
+         /     \/    /  /        |::|::|:|:-:| / ^  \  ^      ^     \
+   _Q   / _Q  _Q_Q  / _Q    _Q   |::|::|:|:::|/    ^ \   _Q      ^
+  /_\)   /_\)/_/\\)  /_\)  /_\)  |::|::|:|:::|          /_\)
+_O|/O___O|/O_OO|/O__O|/O__O|/O__________________________O|/O__________
+//////////////////////////////////////////////////////////////////////
+                 Life is fantastic, welcome back
+"""
+
 class LogColor(Enum):
   state     = "<ansiyellow>%s</ansiyellow>"
   emphasize = "<ansired>%s</ansired>"
@@ -24,3 +44,6 @@ def log_listing(list_item, playing_flag: bool):
                          style=playing_style)
   else:
     log(LogColor.listing, list_item)
+
+# showup  a ascii art when it is imported
+log(LogColor.listing, ascii_art)
